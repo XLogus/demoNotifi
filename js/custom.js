@@ -1,3 +1,4 @@
+var pushNotification;
 // Wait for PhoneGap to load
         document.addEventListener("deviceready", onDeviceReady(), false);
 
@@ -6,15 +7,17 @@
         function onDeviceReady() {
             // Initializing Google Analytics
             alert("onDeviceReady1");
-            gaPlugin = window.plugins.gaPlugin;
-            alert("onDeviceReady2");        
+            //gaPlugin = window.plugins.gaPlugin;
+            //alert("onDeviceReady2");
+            pushNotification = window.plugins.pushNotification;
+            alert("Plugin notificacion cargado");        
         }
 
-var pushNotification;
+
+
 
 if ( device.platform == 'android' || device.platform == 'Android' )
-{
-    alert("Buscando codigo"); 
+{     
     pushNotification.register(
         successHandler,
         errorHandler, {
@@ -32,6 +35,10 @@ else
             "alert":"true",
             "ecb":"onNotificationAPN"
         });
+}
+
+function successHandler (result) {
+    alert('result = ' + result);
 }
 
 function onNotificationGCM(e) {
