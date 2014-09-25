@@ -137,5 +137,5 @@ PushNotApp.main.initialize();
 
 /// Notificaciones
 function notificar() {
-    navigator.notification.alert('Esta es una notificacion', alertCallback, 'Tienes un nuevo mensaje', 'Dale')
+    window.plugin.notification.local.add({ message: 'Great app!' });
 }
