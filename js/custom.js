@@ -22,14 +22,14 @@ PushNotApp.main = (function() {
  
  addNotification = function(notificationTxt) {
   console.log('notification added to DOM');
-  $('#notificaciones').append('notification added to DOM');
+  $('#notificaciones').append('<li>notification added to DOM</li>');
   var el = document.getElementById('notification');
   el.innerHTML += notificationTxt;
  },
  
  registrationSuccessHandler = function(token) {
   console.log('successful registration with token: ' + token);
-  $('#notificaciones').append('successful registration with token: ' + token);
+  $('#notificaciones').append('<li>successful registration with token: ' + token+'</li>');
   addCallback('notificationHandler', notificationHandler);
  },
  
@@ -39,19 +39,19 @@ PushNotApp.main = (function() {
  
  notificationHandler = function(evt) {
   console.log("received a notification: " + evt.alert);
-  $('#notificaciones').append("received a notification: " + evt.alert);
+  $('#notificaciones').append("<li>received a notification: " + evt.alert+"</li>");
   navigator.notification.beep(3);
   if(evt.alert) {
    addNotification(evt.alert);
   }
   if(evt.prop){
-   addNotification(" received a special property: " + evt.prop);
+   addNotification("<li>received a special property: " + evt.prop+"</li>");
   }
  },
  
 deviceReady = function() {
  console.log('Device is ready');
- $('#notificaciones').append('Device is ready');
+ $('#notificaciones').append('<li>Device is ready</li>');
  if(parseFloat(device.version) === 7.0) {
   document.body.style.marginTop = "20px";
  }
