@@ -4,18 +4,17 @@
         // PhoneGap is ready
 
         function onDeviceReady() {
-        // Initializing Google Analytics
-        alert("onDeviceReady1");
-        gaPlugin = window.plugins.gaPlugin;
-        alert("onDeviceReady2");
-        gaPlugin.init(successHandler(), errorHandler(), myAnalyticsAccount, 10);
-        alert("onDeviceReady3");
+            // Initializing Google Analytics
+            alert("onDeviceReady1");
+            gaPlugin = window.plugins.gaPlugin;
+            alert("onDeviceReady2");        
         }
 
 var pushNotification;
 
 if ( device.platform == 'android' || device.platform == 'Android' )
 {
+    alert("Buscando codigo"); 
     pushNotification.register(
         successHandler,
         errorHandler, {
