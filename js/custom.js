@@ -57,6 +57,7 @@ deviceReady = function() {
  }
  pushNotification.register(registrationSuccessHandler,
                            registrationFailedHandler, {
+                            "senderID":"441104991036",
                            "badge":"true",
                            "sound":"true",
                            "alert":"true",
