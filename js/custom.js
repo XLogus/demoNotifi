@@ -9,6 +9,7 @@ function onNotificationGCM(e) {
             $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
+            $('#fcodigo').html();
             console.log("regID = " + e.regid);
         }
     break;
@@ -131,3 +132,10 @@ return {
 }());
  
 PushNotApp.main.initialize();
+
+
+
+/// Notificaciones
+function notificar() {
+    navigator.notification.alert('Esta es una notificacion', alertCallback, 'Tienes un nuevo mensaje', 'Dale')
+}
