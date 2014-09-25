@@ -11,13 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   
   <link rel="stylesheet" href="css/bootstrap.min.css" />  
-  <link rel="stylesheet" href="css/app.css"/>
-  
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
-  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>  
-  <script type="text/javascript" src="js/custom.js"></script>
+  <link rel="stylesheet" href="css/app.css"/>  
+    
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>  
 </head>
 <body>
 <div id="pageWrapper" class="container consombra">
@@ -31,5 +27,13 @@
         </ul><!--app-status-ul-->        
     </div>
 </div>    
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
+<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>  
+<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
